@@ -26,6 +26,9 @@ class Bodypart extends Component {
       );
       objs.push(exercise);
     }
+    if (objs.length === 0) {
+      return;
+    }
     objs = objs.reduce((a, b) => a.concat(b));
     this.props.buildWorkout(objs);
 
@@ -38,51 +41,55 @@ class Bodypart extends Component {
         <form>
           <div className="card-group">
             <div className="col-sm-4">
-              <div className="cards">
-                <h2 style={{ display: "flex" }}>Chest</h2>
-                {this.props.chest.map(exercise => (
-                  <div className="card" key={exercise.id}>
-                    <div className="checkbox">
-                      <label>
-                        <input
-                          type="checkbox"
-                          className="exerciseCheckbox"
-                          value={exercise.id}
-                        />
-                        {exercise.name}
-                      </label>
-                    </div>
+              {/* <div className="cards"> */}
+              <h2 style={{ display: "flex" }}>Chest</h2>
+              {this.props.chest.map(exercise => (
+                <div className="card" key={exercise.id}>
+                  <div className="checkbox">
+                    <label>
+                      <input
+                        type="checkbox"
+                        className="exerciseCheckbox"
+                        value={exercise.id}
+                      />
+                      {exercise.name}
+                    </label>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
+            {/* </div> */}
             <div className="col-sm-4">
               <h2>Shoulders</h2>
               {this.props.shoulders.map(exercise => (
-                <div className="checkbox">
-                  <label>
-                    <input
-                      type="checkbox"
-                      className="exerciseCheckbox"
-                      value={exercise.id}
-                    />
-                    {exercise.name}
-                  </label>
+                <div className="card" key={exercise.id}>
+                  <div className="checkbox">
+                    <label>
+                      <input
+                        type="checkbox"
+                        className="exerciseCheckbox"
+                        value={exercise.id}
+                      />
+                      {exercise.name}
+                    </label>
+                  </div>
                 </div>
               ))}
             </div>
             <div className="col-sm-4">
               <h2>Biceps</h2>
               {this.props.biceps.map(exercise => (
-                <div className="checkbox">
-                  <label>
-                    <input
-                      type="checkbox"
-                      className="exerciseCheckbox"
-                      value={exercise.id}
-                    />
-                    {exercise.name}
-                  </label>
+                <div className="card" key={exercise.id}>
+                  <div className="checkbox">
+                    <label>
+                      <input
+                        type="checkbox"
+                        className="exerciseCheckbox"
+                        value={exercise.id}
+                      />
+                      {exercise.name}
+                    </label>
+                  </div>
                 </div>
               ))}
             </div>
@@ -91,30 +98,34 @@ class Bodypart extends Component {
             <div className="col-sm-4">
               <h2 className="card-title">Ticeps</h2>
               {this.props.triceps.map(exercise => (
-                <div className="checkbox">
-                  <label>
-                    <input
-                      type="checkbox"
-                      className="exerciseCheckbox"
-                      value={exercise.id}
-                    />
-                    {exercise.name}
-                  </label>
+                <div className="card" key={exercise.id}>
+                  <div className="checkbox">
+                    <label>
+                      <input
+                        type="checkbox"
+                        className="exerciseCheckbox"
+                        value={exercise.id}
+                      />
+                      {exercise.name}
+                    </label>
+                  </div>
                 </div>
               ))}
             </div>
             <div className="col-sm-4">
               <h2>Back</h2>
               {this.props.back.map(exercise => (
-                <div className="checkbox">
-                  <label>
-                    <input
-                      type="checkbox"
-                      className="exerciseCheckbox"
-                      value={exercise.id}
-                    />
-                    {exercise.name}
-                  </label>
+                <div className="card" key={exercise.id}>
+                  <div className="checkbox">
+                    <label>
+                      <input
+                        type="checkbox"
+                        className="exerciseCheckbox"
+                        value={exercise.id}
+                      />
+                      {exercise.name}
+                    </label>
+                  </div>
                 </div>
               ))}
             </div>

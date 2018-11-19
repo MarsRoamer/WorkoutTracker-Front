@@ -99,15 +99,21 @@ class Login extends Component {
             />
           </form>
         </div>
-        <div>
+        <div
+          style={{ display: "flex", justifyContent: "center" }}
+          className="mt-5"
+        >
           {this.register()}
+          {/* <h4>Need to create an account? Click below!</h4> */}
           <button
             onClick={() => this.setState({ register: !this.state.register })}
+            className="btn btn-primary"
           >
             Create Account
           </button>
         </div>
       </div>
+
       // </div>
     );
   }

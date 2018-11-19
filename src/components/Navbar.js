@@ -98,18 +98,18 @@ const Navbar = props => {
                 Workout Tracker
               </NavLink>
               <ul>
-                <li>
-                  <React.Fragment>
-                    <NavLink
-                      onClick={props.logOut}
-                      className="navbar-brand"
-                      to="/displayworkout"
-                      exact
-                    >
-                      Logout
-                    </NavLink>
-                  </React.Fragment>
-                </li>
+                {/* <li> */}
+                <React.Fragment>
+                  <NavLink
+                    onClick={props.logOut}
+                    className="navbar-brand"
+                    to="/displayworkout"
+                    exact
+                  >
+                    Logout
+                  </NavLink>
+                </React.Fragment>
+                {/* </li> */}
               </ul>
             </React.Fragment>
           </div>

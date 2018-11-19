@@ -103,3 +103,10 @@ export const createNewUser = userDetails => {
       .then(myJson => dispatch(registerUser(myJson["id"])));
   };
 };
+
+export const addForReview = lift => {
+  return {
+    type: "FOR_REVIEW",
+    lift
+  };
+};

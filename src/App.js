@@ -12,6 +12,7 @@ import "./App.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
+import ReviewWorkout from "./components/ReviewWorkout";
 
 library.add(faDumbbell);
 
@@ -82,7 +83,15 @@ class App extends Component {
                   liftHistory={this.props.liftHistory}
                   saveLift={this.props.savedLifts}
                   getLiftHistory={this.props.getLiftHistory}
+                  addForReview={this.props.addForReview}
                 />
+              )}
+            />
+            <Route
+              exact
+              path="/reviewworkout"
+              render={() => (
+                <ReviewWorkout displayWorkout={this.props.reviewWorkout} />
               )}
             />
             <button onClick={e => this.handleClick(e)}>LogOut</button>
@@ -99,7 +108,8 @@ const mapStateToProps = state => {
     userId: state.session.userId,
     workout: state.workout,
     liftHistory: state.liftHistory,
-    loggedIn: state.session.loggedIn
+    loggedIn: state.session.loggedIn,
+    reviewWorkout: state.displayWorkout
     // exercises: state.exercises
   };
 };

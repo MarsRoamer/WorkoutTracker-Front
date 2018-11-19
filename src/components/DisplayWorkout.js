@@ -17,7 +17,7 @@ class DisplayWorkout extends Component {
   };
 
   reviewWorkout = () => {
-    debugger;
+    this.props.history.push("/reviewworkout");
   };
 
   updateState = id => {
@@ -51,6 +51,7 @@ class DisplayWorkout extends Component {
               getLiftHistory={this.props.getLiftHistory}
               unMount={this.updateState}
               test={this.myRef.current}
+              reviewWorkout={this.props.addForReview}
             />
           );
         })}
